@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Multipage</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <form id="multiPageForm">
+      <!-- Página 1: Datos Personales -->
+      <div class="page" id="page1">
+        <h2>Datos Personales</h2>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido"><br>
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento"><br>
+        <button type="button" onclick="nextPage(2)">Siguiente</button>
+      </div>
+
+      <!-- Página 2: Familiares -->
+      <div class="page" id="page2">
+        <h2>Familiares</h2>
+        <div id="familiaresContainer"></div>
+        <button type="button" onclick="addFamiliar()">Agregar Familiar</button><br>
+        <button type="button" onclick="prevPage(1)">Anterior</button>
+        <button type="button" onclick="nextPage(3)">Siguiente</button>
+      </div>
+
+      <!-- Página 3: Condiciones de Salud -->
+      <div class="page" id="page3">
+        <h2>Condiciones de Salud</h2>
+        <div id="condicionesContainer"></div>
+        <button type="button" onclick="addCondicion()">Agregar Condición</button><br>
+        <button type="button" onclick="prevPage(2)">Anterior</button>
+        <button type="button" onclick="nextPage(4)">Siguiente</button>
+      </div>
+
+      <!-- Página 4: Internamientos -->
+      <div class="page" id="page4">
+        <h2>Internamientos</h2>
+        <div id="internamientosContainer"></div>
+        <button type="button" onclick="addInternamiento()">Agregar Internamiento</button><br>
+        <button type="button" onclick="prevPage(3)">Anterior</button>
+        <button type="button" onclick="nextPage(5)">Siguiente</button>
+      </div>
+
+      <!-- Página 5: Resumen -->
+      <div class="page" id="page5">
+        <h2>Resumen de Datos</h2>
+        <div id="resumen"></div>
+        <button type="button" onclick="prevPage(4)">Anterior</button>
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
